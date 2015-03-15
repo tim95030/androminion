@@ -39,6 +39,7 @@ public class MyCard implements Serializable {
 	public boolean isLooter   = false;
 	public boolean isKnight   = false;
 	public boolean isOverpay  = false;
+	public boolean isBlackMarket = false;
 	
 	public static final int SUPPLYPILE = 1;
 	public static final int MONEYPILE = 2;
@@ -48,6 +49,7 @@ public class MyCard implements Serializable {
 	public static final int SHELTER_PILES = 6;
 	public static final int RUINS_PILES = 7;
 	public static final int KNIGHTS_PILES = 8;
+	public static final int BLACKMARKET_PILE = 9;
 
 	public int pile;
 
@@ -61,11 +63,11 @@ public class MyCard implements Serializable {
 	}
 	
 	/* This method is now unused. It had been copied to CardView.java
-     * to simplify card type internationalization.
-     */
+	 * to simplify card type internationalization.
+	 */
 	public String GetCardTypeString()
     {
-	    String cardType = "";
+        String cardType = "";
         
         if (isAction)
         {

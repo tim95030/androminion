@@ -1,12 +1,14 @@
 package com.vdom.api;
 
+import java.io.Serializable;
+
 import com.vdom.core.CardImpl;
 import com.vdom.core.Cards.Type;
 import com.vdom.core.MoveContext;
 
 
-public interface Card {
-	public Type getType();
+public interface Card extends Serializable {
+    public Type getType();
 
     public String getName();
 
@@ -22,6 +24,8 @@ public interface Card {
 
     public int getCost(MoveContext context, boolean buyPhase);
 
+    public boolean isVictory(MoveContext context);
+    
     public boolean costPotion();
     
     public boolean isPrize();
@@ -38,11 +42,12 @@ public interface Card {
     
     public Integer getId();
     
+    public void isBuying(MoveContext context);
     public void isBought(MoveContext context);
     
     public void isTrashed(MoveContext context);
     
-	public boolean isImpersonatingAnotherCard();
+    public boolean isImpersonatingAnotherCard();
     public Card behaveAsCard();
     public CardImpl getControlCard();
 
